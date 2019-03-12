@@ -35,9 +35,13 @@ navs:
     href: /categories/
     label: 分类
 
-  -
-    href: /links/
-    label: 链接
+#  -
+#    href: /wiki/
+#    label: wiki
+
+#  -
+#    href: /links/
+#    label: 链接
 
   -
     href: /about/
