@@ -2,26 +2,26 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://mazhuang.org
+url: https://jichao257.github.io/
 date_format: "ordinal"
-title: 九九叔
-subtitle: 九九叔的github之家
-description: 九九叔的github之家
-keywords: 九九叔, JiuJiuShu, jjslogin, JiuJiuShu
+title: 菜鸟集中营
+subtitle: 菜鸟的 github 之家
+description: 菜鸟的 github 之家
+keywords: 菜鸟集中营, python, php, mysql, redis
 favicon: /favicon.ico
-timezone: Asia/Shenzhen
+timezone: Asia/ShangHai
 encoding: "utf-8"
 side_bar_repo_limit: 5
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: JiuJiuShu
-organization: OPPO, Inc.
-organization_url: http://www.oppo.com
-github_username: wenfengtou
-location: Shenzhen, China
-email: qianmayi@gmail.com
+author: Manoon
+organization:
+organization_url:
+github_username: jichao257
+location: BeiJing, China
+email: 397191376@qq.com
 
 # ---------------- #
 #    Navigation    #
@@ -34,10 +34,6 @@ navs:
   -
     href: /categories/
     label: 分类
-
-  -
-    href: /wiki/
-    label: 维基
 
   -
     href: /links/
@@ -80,20 +76,20 @@ collections:
 
 repository: wenfengtou/mzlogin.github.io
 
-# ---------------- #
-#      Comments    #
-# ---------------- #
-# support provider: disqus, netease_gentie
-comments_provider: netease_gentie
-# !!!重要!!! 请修改下面这些信息为你自己申请的
-# !!!Important!!! Please modify infos below to yours
-disqus_username: mzlogin
-netease_gentie_key: 560ed243b708465d82d5a0a5f3b83da1
-# 在使用网易云跟帖时可点击显示 Disqus
-lazy_load_disqus : true
-
-# ---------------- #
-#    Analytics     #
-# ---------------- #
-google:
-    analytics_id: UA-80669434-1
+## ---------------- #
+##      Comments    #
+## ---------------- #
+## support provider: disqus, netease_gentie
+#comments_provider: netease_gentie
+## !!!重要!!! 请修改下面这些信息为你自己申请的
+## !!!Important!!! Please modify infos below to yours
+#disqus_username: mzlogin
+#netease_gentie_key: 560ed243b708465d82d5a0a5f3b83da1
+## 在使用网易云跟帖时可点击显示 Disqus
+#lazy_load_disqus : true
+#
+## ---------------- #
+##    Analytics     #
+## ---------------- #
+#google:
+#    analytics_id: UA-80669434-1
