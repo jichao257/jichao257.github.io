@@ -1,24 +1,18 @@
 ---
 layout: page
 title: About
-description: 九九叔的github之家
-keywords: JiuJiuShu, 九九叔
+description: 菜鸟的 github 之家
+keywords: 菜鸟集中营, Manoon
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是九九叔。
+Hello 大家好，我是 Manoon。
 
-坚持就是胜利。
+菜鸟也有菜鸟的精彩。
 
-爱自己，爱别人，爱生活。
-
-## 联系
-
-{% for website in site.data.social %}
-* {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
-{% endfor %}
+爱自己，爱编程，爱生活。
 
 ## Skill Keywords
 
