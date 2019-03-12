@@ -1,5 +1,7 @@
 # 菜鸟集中营
 
+> 注：本文 fork 于 <https://github.com/wenfengtou/wenfengtou.github.io> 为了方便后来人才予以保留，内容略有出入，如有不明之处请参考原文
+
 我的个人博客：<https://jichao257.github.io/>，欢迎 Star 和 Fork。
 
 ## 概览
