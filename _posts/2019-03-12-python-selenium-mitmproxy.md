@@ -132,12 +132,18 @@ Mitmproxy 就是用于 MITM 的 proxy，MITM 即中间人攻击（Man-in-the-mid
 - mitmweb 命令启动后，会提供一个 web 界面，用户可以实时看到发生的请求，并通过 GUI 交互来过滤请求，查看请求数据。
 - mitmdump 命令启动后——你应该猜到了，没有界面，程序默默运行，所以 mitmdump 无法提供过滤请求、查看数据的功能，只能结合自定义脚本，默默工作。
 
+启动并加载过滤脚本：
+
+    mitmweb -s xxx.py
+
 ## 使用 Mitmproxy 来绕过网站服务器对 Selenium 的屏蔽
 
 在我们使用 Selenium 通过 webdriver 来访问网站的时候，网站服务器可以通过一些特别饿 js 变量来识别是否使用了 Selenium 如 `webdriver`，从而使得网站服务器能够识别我们编写的爬虫脚本。
 
 这里我们使用 Mitmproxy 来替换关键变量，使得网站服务器无法识别 Selenium，这里我们编写的 Mitmproxy 的过滤脚本如下：
 
+    # file: mitmproxy_local.py
+    
     from mitmproxy import ctx
 
     injected_javascript = '''
@@ -203,8 +209,69 @@ Mitmproxy 就是用于 MITM 的 proxy，MITM 即中间人攻击（Man-in-the-mid
     
 这时候当我们看到 Mitmproxy 打印的 js 替换成功的信息，就说明我们代理成功了。
 
+## 让 Selenium 打开指定的（打开过的）浏览器窗口
+
+让 Selenium 打开指定的（打开过的）浏览器窗口，可以更方便的维持登录，但 Selenium 并不支持打开指定的浏览器窗口，所以我们需要自己使用代码来实现。我们可以编写一个类来继承 Chrom 的 WebDriver 类：
+
+    from selenium.webdriver import Remote
+    from selenium.webdriver.chrome import options
+    from selenium.common.exceptions import InvalidArgumentException
+    
+    
+    class ReuseChrome(Remote):
+    
+        def __init__(self, command_executor, session_id):
+            self.r_session_id = session_id
+            Remote.__init__(self, command_executor=command_executor, desired_capabilities={})
+    
+        def start_session(self, capabilities, browser_profile=None):
+            """
+            重写start_session方法
+            """
+            if not isinstance(capabilities, dict):
+                raise InvalidArgumentException("Capabilities must be a dictionary")
+            if browser_profile:
+                if "moz:firefoxOptions" in capabilities:
+                    capabilities["moz:firefoxOptions"]["profile"] = browser_profile.encoded
+                else:
+                    capabilities.update({'firefox_profile': browser_profile.encoded})
+    
+            self.capabilities = options.Options().to_capabilities()
+            self.session_id = self.r_session_id
+            self.w3c = False
+
+这样我们使用这个类和之前保存下载的 `command_executor` 和 `session_id` 就可以打开之前打开的窗口了：
+
+        def build_driver():
+    
+            filename = './session.txt'
+    
+            try:
+                with open(filename, 'r') as f:
+                    sessions = json.load(f)
+            except FileNotFoundError:
+                sessions = dict()
+    
+            if not len(sessions):
+                driver = webdriver.Chrome()
+    
+                executor_url = driver.command_executor._url
+                session_id = driver.session_id
+    
+                with open(filename, 'w') as f:
+                    json.dump({'executor_url': executor_url, 'session_id': session_id}, f)
+                    else:
+                    
+            self._driver = ReuseChrome(command_executor=sessions['executor_url'], session_id=sessions['session_id'])
+                windows = driver.window_handles
+                driver.switch_to.window(windows[0])
+    
+            return driver
+
 ## 参考文献
 
 - [廖雪峰的 Python 教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432712108300322c61f256c74803b43bfd65c6f8d0d0000)
 - [如何解决 Python 包依赖问题](https://www.jianshu.com/p/8a7de18e0ffb)
 - [Selenium Python 简易教程](http://www.testclass.net/selenium_python)
+- [使用 mitmproxy + python 做拦截代理](https://www.cnblogs.com/grandlulu/p/9525417.html)
+- [Python Webdriver 重新使用已经打开的浏览器实例](https://www.cnblogs.com/jhao/p/8267929.html)
