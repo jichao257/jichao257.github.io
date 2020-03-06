@@ -4,10 +4,10 @@
 baseurl:
 url: https://jichao257.github.io/
 date_format: "ordinal"
-title: 菜鸟集中营
-subtitle: 菜鸟的 github 之家
-description: 菜鸟的 github 之家
-keywords: 菜鸟集中营, python, php, mysql, redis
+title: Manoon 读源码
+subtitle: 源码界的黑暗料理
+description: 阅读源代码从来都是学习一门编程语言的不二法门，所以还等什么，让我们一起来读源码吧。
+keywords: php, laravel, Manoon, 源码
 favicon: /favicon.ico
 timezone: Asia/ShangHai
 encoding: "utf-8"
