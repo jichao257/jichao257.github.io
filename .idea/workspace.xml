@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="698fdcd1-189e-4d25-852c-127ff0b01043" name="Default Changelist" comment="" />
+    <list default="true" id="698fdcd1-189e-4d25-852c-127ff0b01043" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/_posts/2020-03-06-第一期 类的自动加载.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-03-06-第一期 类的自动加载.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2020-03-06-第一期 类的自动加载.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="152">
-                <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+              <first_editor relative-caret-position="133">
+                <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -32,7 +34,11 @@
       <find>servi</find>
       <find>菜鸟</find>
       <find>vueadmin</find>
+      <find>Manoon</find>
     </findStrings>
+    <replaceStrings>
+      <replace>马农</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,12 +134,12 @@
       <workItem from="1563157911067" duration="596000" />
       <workItem from="1571795943207" duration="16000" />
       <workItem from="1572915925429" duration="432000" />
-      <workItem from="1583469949273" duration="2049000" />
+      <workItem from="1583469949273" duration="3462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8532000" />
+    <option name="totallyTimeSpent" value="9945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -281,8 +287,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2020-03-06-第一期 类的自动加载.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="152">
-            <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <first_editor relative-caret-position="133">
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
